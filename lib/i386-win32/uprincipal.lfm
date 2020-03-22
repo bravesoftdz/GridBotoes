@@ -1,0 +1,166 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 205
+  Height = 457
+  Top = 153
+  Width = 983
+  Caption = 'Botões Dinamicos'
+  ClientHeight = 457
+  ClientWidth = 983
+  OnActivate = FormActivate
+  OnClose = FormClose
+  LCLVersion = '2.0.2.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 80
+    Top = 0
+    Width = 983
+    Align = alTop
+    ClientHeight = 80
+    ClientWidth = 983
+    TabOrder = 0
+    object btnCadastro: TButton
+      Left = 456
+      Height = 56
+      Top = 9
+      Width = 75
+      Caption = 'Cadastro'
+      OnClick = btnCadastroClick
+      TabOrder = 0
+    end
+    object btnExecuta: TButton
+      Left = 536
+      Height = 57
+      Top = 8
+      Width = 176
+      Caption = 'Monta Tela Botões'
+      OnClick = btnExecutaClick
+      TabOrder = 1
+    end
+    object cmbPosicaoIcone: TComboBox
+      Left = 79
+      Height = 23
+      Top = 33
+      Width = 120
+      ItemHeight = 15
+      ItemIndex = 0
+      Items.Strings = (
+        'Esquerda'
+        'Direita'
+        'Em cima'
+        'Em baixo'
+      )
+      TabOrder = 2
+      Text = 'Esquerda'
+    end
+    object Label1: TLabel
+      Left = 79
+      Height = 15
+      Top = 18
+      Width = 107
+      Caption = 'Posição Ícone Botão'
+      ParentColor = False
+    end
+    object nColunas: TJLabeledIntegerEdit
+      Left = 215
+      Height = 23
+      Top = 33
+      Width = 80
+      DisplayFormat = '0'
+      Value = 4
+      NegativeColor = clDefault
+      EditLabel.Height = 15
+      EditLabel.Width = 80
+      EditLabel.Caption = 'Colunas'
+      EditLabel.ParentColor = False
+      TabOrder = 3
+    end
+    object nAlturaBotao: TJLabeledIntegerEdit
+      Left = 311
+      Height = 23
+      Top = 33
+      Width = 80
+      DisplayFormat = '0'
+      Value = 70
+      NegativeColor = clDefault
+      EditLabel.Height = 15
+      EditLabel.Width = 80
+      EditLabel.Caption = 'Altura Botao'
+      EditLabel.ParentColor = False
+      TabOrder = 4
+    end
+  end
+  object pnpQueryGrupo: TPanel
+    Left = 0
+    Height = 377
+    Top = 80
+    Width = 376
+    Align = alLeft
+    ClientHeight = 377
+    ClientWidth = 376
+    TabOrder = 1
+    object pnpTituloQuery: TPanel
+      Left = 1
+      Height = 50
+      Top = 1
+      Width = 374
+      Align = alTop
+      Caption = 'Exibindo Query no dbgrid'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      TabOrder = 0
+    end
+    object DBGrid1: TDBGrid
+      Left = 1
+      Height = 325
+      Top = 51
+      Width = 374
+      Align = alClient
+      Color = clWindow
+      Columns = <>
+      Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgAutoSizeColumns]
+      TabOrder = 1
+    end
+  end
+  object Panel2: TPanel
+    Left = 376
+    Height = 377
+    Top = 80
+    Width = 607
+    Align = alClient
+    Caption = 'Panel2'
+    ClientHeight = 377
+    ClientWidth = 607
+    TabOrder = 2
+    object pnpBotoesTitulo: TPanel
+      Left = 1
+      Height = 50
+      Top = 1
+      Width = 605
+      Align = alTop
+      Caption = 'Exibindo Query em Botões'
+      Font.CharSet = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Pitch = fpVariable
+      Font.Quality = fqDraft
+      ParentFont = False
+      TabOrder = 0
+    end
+    object ScrollBox1: TScrollBox
+      Left = 1
+      Height = 325
+      Top = 51
+      Width = 605
+      HorzScrollBar.Page = 1
+      VertScrollBar.Page = 1
+      Align = alClient
+      TabOrder = 1
+    end
+  end
+end

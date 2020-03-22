@@ -1,0 +1,21 @@
+* Usei MySQL no exemplo, pode usar qualquer base da sua preferencia
+* No MySQL ou MariaDB, criar schema (base de dados)
+
+CREATE DATABASE dbteste;
+
+* A estrutura da minha tabela de grupo:
+
+CREATE TABLE grupo (
+codigo int(11) NOT NULL auto_increment PRIMARY KEY,
+descricao varchar(45) default NULL,
+desc_botao varchar(15) default NULL,
+cria_botao int(11) default NULL,
+imagem_botao blob,
+grupocol varchar(45) default NULL
+);
+
+* Pode restaurar o backup do arquivo:
+  dbteste.backup
+
+* Na dúvida veja o meu vídeo:
+https://youtu.be/AxQcr4GyfyI

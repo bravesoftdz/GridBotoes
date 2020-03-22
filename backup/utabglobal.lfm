@@ -1,0 +1,161 @@
+object TabGlobal: TTabGlobal
+  OldCreateOrder = False
+  Height = 227
+  HorizontalOffset = 442
+  VerticalOffset = 191
+  Width = 332
+  PPI = 96
+  object conexao: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = False
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'dbteste'
+    User = 'root'
+    Password = '3004'
+    Protocol = 'mysql'
+    left = 53
+    top = 21
+  end
+  object tbGrupo: TZQuery
+    Connection = conexao
+    UpdateObject = upGrupo
+    AfterPost = tbGrupoAfterPost
+    SQL.Strings = (
+      'select * from grupo'
+    )
+    Params = <>
+    UpdateMode = umUpdateAll
+    left = 45
+    top = 102
+    object tbGrupocodigo: TLongintField
+      FieldKind = fkData
+      FieldName = 'codigo'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object tbGrupodescricao: TStringField
+      FieldKind = fkData
+      FieldName = 'descricao'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 180
+    end
+    object tbGrupodesc_botao: TStringField
+      FieldKind = fkData
+      FieldName = 'desc_botao'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 60
+    end
+    object tbGrupocria_botao: TLongintField
+      FieldKind = fkData
+      FieldName = 'cria_botao'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbGrupoimagem_botao: TBlobField
+      FieldKind = fkData
+      FieldName = 'imagem_botao'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object tbGrupogrupocol: TStringField
+      FieldKind = fkData
+      FieldName = 'grupocol'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 180
+    end
+  end
+  object upGrupo: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM grupo'
+      'WHERE'
+      '  grupo.codigo = :OLD_codigo'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO grupo'
+      '  (codigo, descricao, desc_botao, cria_botao, imagem_botao, grupocol)'
+      'VALUES'
+      '  (:codigo, :descricao, :desc_botao, :cria_botao, :imagem_botao, :grupocol)'
+    )
+    ModifySQL.Strings = (
+      'UPDATE grupo SET'
+      '  codigo = :codigo,'
+      '  descricao = :descricao,'
+      '  desc_botao = :desc_botao,'
+      '  cria_botao = :cria_botao,'
+      '  imagem_botao = :imagem_botao,'
+      '  grupocol = :grupocol'
+      'WHERE'
+      '  grupo.codigo = :OLD_codigo'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 104
+    top = 152
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'codigo'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'descricao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'desc_botao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'cria_botao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'imagem_botao'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'grupocol'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'OLD_codigo'
+        ParamType = ptUnknown
+      end>
+  end
+  object dsGrupo: TDataSource
+    DataSet = tbGrupo
+    left = 176
+    top = 106
+  end
+end

@@ -1,0 +1,145 @@
+object frmCadGrupo: TfrmCadGrupo
+  Left = 361
+  Height = 368
+  Top = 164
+  Width = 790
+  Caption = 'Cadastro de Grupo'
+  ClientHeight = 368
+  ClientWidth = 790
+  LCLVersion = '1.8.2.0'
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 184
+    Top = 184
+    Width = 790
+    Align = alBottom
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'codigo'
+        FieldName = 'codigo'
+      end    
+      item
+        Title.Caption = 'descricao'
+        Width = 400
+        FieldName = 'descricao'
+      end>
+    DataSource = TabGlobal.dsGrupo
+    TabOrder = 0
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 120
+    Height = 25
+    Top = 136
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = TabGlobal.dsGrupo
+    Options = []
+    TabOrder = 1
+  end
+  object nCodigo: TJDBLabeledIntegerEdit
+    Left = 32
+    Height = 23
+    Top = 24
+    Width = 80
+    DataField = 'codigo'
+    DataSource = TabGlobal.dsGrupo
+    NegativeColor = clDefault
+    EditLabel.AnchorSideLeft.Control = nCodigo
+    EditLabel.AnchorSideRight.Control = nCodigo
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = nCodigo
+    EditLabel.Left = 32
+    EditLabel.Height = 15
+    EditLabel.Top = 6
+    EditLabel.Width = 80
+    EditLabel.Caption = 'Codigo'
+    EditLabel.ParentColor = False
+    TabOrder = 2
+  end
+  object JDBLabeledEdit1: TJDBLabeledEdit
+    Left = 128
+    Height = 23
+    Top = 24
+    Width = 328
+    DataField = 'descricao'
+    DataSource = TabGlobal.dsGrupo
+    EditLabel.AnchorSideLeft.Control = JDBLabeledEdit1
+    EditLabel.AnchorSideRight.Control = JDBLabeledEdit1
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = JDBLabeledEdit1
+    EditLabel.Left = 128
+    EditLabel.Height = 15
+    EditLabel.Top = 6
+    EditLabel.Width = 328
+    EditLabel.Caption = 'Descrição'
+    EditLabel.ParentColor = False
+    MaxLength = 180
+    TabOrder = 3
+  end
+  object JDBLabeledEdit2: TJDBLabeledEdit
+    Left = 128
+    Height = 23
+    Top = 72
+    Width = 112
+    DataField = 'desc_botao'
+    DataSource = TabGlobal.dsGrupo
+    EditLabel.AnchorSideLeft.Control = JDBLabeledEdit2
+    EditLabel.AnchorSideRight.Control = JDBLabeledEdit2
+    EditLabel.AnchorSideRight.Side = asrBottom
+    EditLabel.AnchorSideBottom.Control = JDBLabeledEdit2
+    EditLabel.Left = 128
+    EditLabel.Height = 15
+    EditLabel.Top = 54
+    EditLabel.Width = 112
+    EditLabel.Caption = 'Descrição do Botão'
+    EditLabel.ParentColor = False
+    MaxLength = 60
+    TabOrder = 4
+  end
+  object DBCheckBox1: TDBCheckBox
+    Left = 263
+    Height = 23
+    Top = 73
+    Width = 90
+    Caption = 'Cria Botão'
+    DataField = 'cria_botao'
+    DataSource = TabGlobal.dsGrupo
+    TabOrder = 5
+    ValueChecked = '1'
+    ValueUnchecked = '0'
+  end
+  object GroupBox1: TGroupBox
+    Left = 488
+    Height = 142
+    Top = 18
+    Width = 185
+    Caption = 'Ícone do Botão'
+    ClientHeight = 122
+    ClientWidth = 181
+    TabOrder = 6
+    object DBImage1: TDBImage
+      Left = 0
+      Height = 122
+      Top = 0
+      Width = 181
+      Align = alClient
+      Center = True
+      DataField = 'imagem_botao'
+      DataSource = TabGlobal.dsGrupo
+      OnClick = DBImage1Click
+    end
+  end
+  object OpenDialog1: TOpenDialog
+    left = 401
+    top = 95
+  end
+end
